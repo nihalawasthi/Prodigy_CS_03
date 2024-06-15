@@ -9,26 +9,18 @@ def check_password_strength(password):
 
     score = 0
     feedback = []
-
-    # Criteria 1: Length
     if length >= 12:
         score += 1
     elif length >= 8:
         feedback.append("Consider using a longer password for better security.")
-
-    # Criteria 2: Presence of uppercase and lowercase letters
     if has_upper and has_lower:
         score += 1
     else:
         feedback.append("Mixing uppercase and lowercase letters enhances security.")
-
-    # Criteria 3: Presence of numbers
     if has_digit:
         score += 1
     else:
         feedback.append("Including numbers adds to the complexity of the password.")
-
-    # Criteria 4: Presence of special characters
     if has_special:
         score += 1
     else:
